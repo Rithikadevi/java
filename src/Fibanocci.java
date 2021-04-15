@@ -1,13 +1,6 @@
 import java.util.Scanner;
 
-public class MulTwoNumbers {
-    public static void main(String[] args) {
-        int a = 10, b = 5;
-        System.out.println(a * b);
-    }
-}
-
-class FibanocciNum {
+public class Fibanocci {
     public static void main(String[] args) {
         int firstnum = 0, secondnum = 1, i, t, end = 10;
         System.out.print(firstnum + " " + secondnum);
@@ -21,7 +14,7 @@ class FibanocciNum {
     }
 }
 
-class PrimeNumbers {
+class PrimeNumber {
     public static void main(String[] args) {
         int N, i, count = 0;
         Scanner sc = new Scanner(System.in);
@@ -40,4 +33,3 @@ class PrimeNumbers {
 
     }
 }
-
