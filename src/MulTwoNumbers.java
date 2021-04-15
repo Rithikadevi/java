@@ -112,3 +112,78 @@ class PyramidSandClock {
     }
 }
 
+class AlphabetPyramid {
+    public static void main(String[] args) {
+        int N, row, col, spc;
+        Scanner sc = new Scanner(System.in);
+        N = sc.nextInt();
+        for (row = 1; row <= N; row++) {
+            for (col = 1; col <= N / 2; col++) {
+                if ((col == 1 || col == N / 2) || row == 1 && col != N / 2 || row == (N / 2) + 1) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+
+class PyramidStar {
+    public static void main(String[] args) {
+        int N, row, col, spc;
+        Scanner sc = new Scanner(System.in);
+        N = sc.nextInt();
+        for (row = 1; row <= N; row++) {
+            for (spc = row; spc <= N - 1; spc++) {
+                System.out.print(" ");
+            }
+            for (col = 1; col <= (row * 2) - 1; col++) {
+                if (col == 1 || row == N || col == (2 * row) - 1) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+
+class Pyramid1 {
+    public static void main(String[] args) {
+        int N, row, col, spc;
+        Scanner sc = new Scanner(System.in);
+        N = sc.nextInt();
+        for (row = 1; row <= N; row++) {
+            for (spc = row; spc <= N - 1; spc++) {
+                System.out.print(" ");
+            }
+            for (col = 1; col <= (row * 2) - 1; col++) {
+                if (col == 1 || col == (2 * row) - 1) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+        for (row = N - 1; row >= 1; row--) {
+            for (spc = row; spc <= N - 1; spc++) {
+                System.out.print(" ");
+            }
+            for (col = 1; col <= (row * 2) - 1; col++) {
+                if (col == 1 || col == (2 * row) - 1) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+
+
+    }
+}
+
