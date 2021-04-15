@@ -41,3 +41,74 @@ class PrimeNumbers {
     }
 }
 
+class PaindromNum {
+    public static void main(String[] args) {
+        int N, r = 0, ans = 0, t;
+        Scanner sc = new Scanner(System.in);
+        N = sc.nextInt();
+        t = N;
+        while (N > 0) {
+            r = N % 10;
+            ans = (ans * 10) + r;
+            N = N / 10;
+        }
+
+        if (t == ans) {
+            System.out.println("Palindrom Number");
+        } else {
+            System.out.println("Not a Palindrom Number");
+        }
+
+    }
+}
+
+class Amstrong {
+    public static void main(String[] args) {
+        int N, r, ans = 0, t;
+        Scanner sc = new Scanner(System.in);
+        N = sc.nextInt();
+        t = N;
+        while (N > 0) {
+            r = N % 10;
+            ans = (r * r * r) + ans;
+            N = N / 10;
+        }
+        System.out.print(ans);
+
+        if (t == ans) {
+            System.out.println("Amstrong number");
+        } else {
+            System.out.println("Not a Amstrong number");
+        }
+    }
+}
+
+class PyramidSandClock {
+    public static void main(String[] args) {
+        int N, row, col, spc, var = 1, var1 = 1;
+        Scanner sc = new Scanner(System.in);
+        N = sc.nextInt();
+        for (row = N; row >= 1; row--) {
+            for (spc = 1; spc <= N - row; spc++) {
+                System.out.print(" ");
+            }
+            for (col = 1; col <= row; col++) {
+                System.out.print(var + " ");
+                var++;
+            }
+            System.out.println();
+        }
+        for (row = 1; row <= N; row++) {
+            for (spc = 1; spc <= N - row; spc++) {
+                System.out.print(" ");
+            }
+            for (col = 1; col <= row; col++) {
+
+                System.out.print(var1 + " ");
+                var1++;
+            }
+            System.out.println();
+        }
+    }
+}
+
