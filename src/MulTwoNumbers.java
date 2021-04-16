@@ -187,3 +187,30 @@ class Pyramid1 {
     }
 }
 
+class Stringapp {
+    public static void main(String[] args) {
+        int num;
+        String str1;
+        Scanner sc = new Scanner(System.in);
+        String ch1 = sc.nextLine();
+        System.out.println(ch1);
+        int Length = ch1.length();
+        System.out.println(Length);
+//        for(int i=0;i<=Length;i++)
+//        {
+//            if(Character.isDigit(ch1.charAt(i))){
+//               num.append(ch1.charAt(i));
+//            }
+//            else{
+//                str1.append(ch1.charAt(i));
+//            }
+//
+//        }
+//        System.out.println( num);
+//        System.out.println( str1);
+    }
+
+}
+
+
+
