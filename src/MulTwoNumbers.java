@@ -189,27 +189,67 @@ class Pyramid1 {
 
 class Stringapp {
     public static void main(String[] args) {
-        int num;
-        String str1;
+        int num = 0;
+        String str1 = "";
         Scanner sc = new Scanner(System.in);
         String ch1 = sc.nextLine();
         System.out.println(ch1);
         int Length = ch1.length();
         System.out.println(Length);
-//        for(int i=0;i<=Length;i++)
-//        {
-//            if(Character.isDigit(ch1.charAt(i))){
-//               num.append(ch1.charAt(i));
-//            }
-//            else{
-//                str1.append(ch1.charAt(i));
-//            }
-//
-//        }
-//        System.out.println( num);
-//        System.out.println( str1);
+        for (int i = 0; i < Length; i++) {
+            int a = ch1.charAt(i);
+            if ((a <= 97 && a >= 122) || (a <= 65 && a >= 90)) {
+                str1 += (char) a;
+            } else if (a <= 49 && a >= 57) {
+
+                num = num + a;
+            }
+        }
+
+        System.out.println(num);
+        System.out.println(str1);
     }
 
+}
+
+class Ascii {
+    public static void main(String[] args) {
+        asciiOfNumber();
+        asciiOfAlpabet();
+        // bothNumandAlp();
+    }
+
+    public static void asciiOfNumber() {
+        int a;
+
+        for (a = 32; a <= 126; a++) {
+            char b = (char) a;
+            System.out.println("ASCII value for " + a + " is " + b);
+        }
+    }
+
+    public static void asciiOfAlpabet() {
+        char a;
+
+        for (a = 32; a <= 126; a++) {
+            int b = (int) a;
+            System.out.println("ASCII value for " + a + " is " + b);
+        }
+    }
+//    public static void bothNumAndAlp()
+//    {
+//        Scanner sc=new Scanner(System.in);
+//        char a=sc.next().charAt(0);
+//
+//        if(Character.isdigit(a))
+//        {
+//            System.out.println((char)a);
+//        }
+//        else
+//        {
+//            System.out.println((int)a);
+//        }
+//    }
 }
 
 
