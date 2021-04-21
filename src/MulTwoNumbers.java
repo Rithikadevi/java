@@ -214,14 +214,13 @@ class Stringapp {
 
 class Ascii {
     public static void main(String[] args) {
-        asciiOfNumber();
-        asciiOfAlpabet();
-        // bothNumandAlp();
+//        asciiOfNumber();
+//      asciiOfAlpabet();
+        bothNumandAlpabet();
     }
 
     public static void asciiOfNumber() {
         int a;
-
         for (a = 32; a <= 126; a++) {
             char b = (char) a;
             System.out.println("ASCII value for " + a + " is " + b);
@@ -230,26 +229,19 @@ class Ascii {
 
     public static void asciiOfAlpabet() {
         char a;
-
         for (a = 32; a <= 126; a++) {
             int b = (int) a;
             System.out.println("ASCII value for " + a + " is " + b);
         }
     }
-//    public static void bothNumAndAlp()
-//    {
-//        Scanner sc=new Scanner(System.in);
-//        char a=sc.next().charAt(0);
-//
-//        if(Character.isdigit(a))
-//        {
-//            System.out.println((char)a);
-//        }
-//        else
-//        {
-//            System.out.println((int)a);
-//        }
-//    }
+
+    public static void bothNumandAlpabet() {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        char b = (char) a;
+        System.out.println("ASCII value for " + a + " is " + b);
+
+    }
 }
 
 
