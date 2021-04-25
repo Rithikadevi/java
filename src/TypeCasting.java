@@ -8,3 +8,16 @@ public class TypeCasting {
 
     }
 }
+
+class Typeconversion {
+    public static void main(String[] args) {
+//        int i = 200;
+//        long l = i;
+//        System.out.println(l);
+//        double d = 200.06d;
+//        int number = (int)d;
+//        System.out.println(number);
+        short a = (short) 50000;
+
+    }
+}
