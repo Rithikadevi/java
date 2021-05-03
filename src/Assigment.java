@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class Assigment {
     public static void main(String[] args) {
 //        CountVowels();
@@ -82,6 +81,7 @@ public class Assigment {
             if (number.charAt(i) == '9') {
                 System.out.print("Nine" + " ");
             }
+
         }
     }
 }
@@ -116,3 +116,179 @@ class Assigment2 {
         System.out.println("count of even position is " + averageOfEven);
     }
 }
+
+class Assignments3 {
+    public static void main(String[] args) {
+        SearchString();
+//        MatrixAddition();
+//        ArrayColumnSum();
+//        PrintSubMatrix();
+//        MatrixDiagonal();
+//        TransposeMatrix();
+//        HumanReadableDate();
+    }
+
+    public static void SearchString() {
+        Scanner sc = new Scanner(System.in);
+        String s1 = sc.nextLine();
+        String s2 = sc.nextLine();
+        String temp = "";
+        for (int i = 0; i < s1.length(); i++) {
+
+            for (int j = i; j < s1.length(); j++) {
+                temp = temp + s1.charAt(j);
+                if (temp.equals(s2)) {
+                    System.out.println("TRUE");
+                    break;
+                }
+            }
+            temp = "";
+        }
+        System.out.println("FALSE");
+    }
+
+    public static void MatrixAddition() {
+        int[][] s1 = {{1, 2, 3}, {5, 6, 7}, {7, 8, 9}};
+        int[][] s2 = {{2, 1, 2}, {1, 2, 1}, {2, 1, 2}};
+        int[][] s3 = new int[3][3];
+        for (int row = 0; row < 3; row++) {
+            for (int col = 0; col < 3; col++) {
+                s3[row][col] = s1[row][col] + s2[row][col];
+                System.out.print(s3[row][col] + " ");
+            }
+            System.out.println();
+        }
+
+    }
+
+    public static void ArrayColumnSum() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("matrix's row and column");
+        int[][] s1 = {{1, 2, 1}, {2, 1, 2}};
+        int s3;
+        for (int row = 0; row < 3; row++) {
+            for (int col = 0; col < 3; col++) {
+                s3 = s1[row][col] + s1[row + 1][col];
+                System.out.println(s3);
+
+            }
+        }
+    }
+
+    public static void PrintSubMatrix() {
+        int rowend = 1;
+        int colend = 1;
+        int[][] array = {{1, 2, 3}, {5, 6, 7}, {7, 8, 9}};
+        for (int i = 0; i <= rowend; i++) {
+            for (int j = 0; j <= colend; j++) {
+                System.out.print(array[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void MatrixDiagonal() {
+        int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        int add1 = 0;
+        int add2 = 0;
+        for (int row = 0; row < 3; row++) {
+            for (int col = 0; col < 3; col++) {
+                if ((row == col)) {
+                    add1 += matrix[row][col];
+                }
+                if ((row == 0 && col == 2) || (col == 0 && row == 2) || (row == col) && (row != 0 && col != 2)) {
+                    add2 += matrix[row][col];
+                }
+            }
+        }
+        System.out.println(add1);
+        System.out.println(add2);
+        System.out.println(add1 - add2);
+    }
+
+    public static void TransposeMatrix() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Matrix's row and col size");
+        int row = sc.nextInt();
+        int col = sc.nextInt();
+        int[][] array = new int[row][col];
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                array[i][j] = sc.nextInt();
+            }
+        }
+        System.out.println("input matrix");
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                System.out.print(array[i][j]);
+            }
+            System.out.println();
+        }
+        System.out.println("Transpose of matrix");
+        for (int i = 0; i < col; i++) {
+            for (int j = 0; j < row; j++) {
+                System.out.print(array[j][i]);
+            }
+            System.out.println();
+        }
+    }
+
+    public static void HumanReadableDate() {
+        String date = "2020-06-01";
+        String array[] = date.split("-");
+        String month = "";
+        String year = "";
+        String date1 = "";
+        for (int i = 0; i < array.length; i++) {
+            if (i == 1) {
+                month += array[i];
+            } else if (i == 0) {
+                year += array[i];
+            } else {
+                date1 += array[i];
+            }
+        }
+        System.out.println(year);
+        System.out.println(month);
+        System.out.println(date1);
+        switch (month) {
+            case "01":
+                System.out.println(date1 + " January " + year);
+                break;
+            case "02":
+                System.out.println(date1 + " Februray " + year);
+                break;
+            case "03":
+                System.out.println(date1 + " March " + year);
+                break;
+            case "04":
+                System.out.println(date1 + " April " + year);
+                break;
+            case "05":
+                System.out.println(date1 + " May " + year);
+                break;
+            case "06":
+                System.out.println(date1 + " June " + year);
+                break;
+            case "07":
+                System.out.println(date1 + " July " + year);
+                break;
+            case "08":
+                System.out.println(date1 + " August " + year);
+                break;
+            case "09":
+                System.out.println(date1 + " September " + year);
+                break;
+            case "10":
+                System.out.println(date1 + " October " + year);
+                break;
+            case "11":
+                System.out.println(date1 + " November " + year);
+                break;
+            case "12":
+                System.out.println(date1 + " December " + year);
+                break;
+        }
+    }
+}
+
