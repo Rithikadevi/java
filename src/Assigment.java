@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class Assigment {
     public static void main(String[] args) {
 //        CountVowels();
@@ -51,37 +52,69 @@ public class Assigment {
         String number = sc.next();
         System.out.println(number);
         for (int i = 0; i < number.length(); i++) {
-            if (number.charAt(i) == '0') {
-                System.out.print("Zero" + " ");
+//            if (number.charAt(i) == '0') {
+//                System.out.print("Zero" + " ");
+//            }
+//            if (number.charAt(i) == '1') {
+//                System.out.print("one" + " ");
+//            }
+//            if (number.charAt(i) == '2') {
+//                System.out.print("two" + " ");
+//            }
+//            if (number.charAt(i) == '3') {
+//                System.out.print("Three" + " ");
+//            }
+//            if (number.charAt(i) == '4') {
+//                System.out.print("Four" + " ");
+//            }
+//            if (number.charAt(i) == '5') {
+//                System.out.print("Five" + " ");
+//            }
+//            if (number.charAt(i) == '6') {
+//                System.out.print("Six" + " ");
+//            }
+//            if (number.charAt(i) == '7') {
+//                System.out.print("Seven" + " ");
+//            }
+//            if (number.charAt(i) == '8') {
+//                System.out.print("Eight" + " ");
+//            }
+//            if (number.charAt(i) == '9') {
+//                System.out.print("Nine" + " ");
+//            }
+            char m = number.charAt(i);
+            switch (m) {
+                case '0':
+                    System.out.print("Zero" + " ");
+                    break;
+                case '1':
+                    System.out.print("One" + " ");
+                    break;
+                case '2':
+                    System.out.print("Two" + " ");
+                    break;
+                case '3':
+                    System.out.print("Three" + " ");
+                    break;
+                case '4':
+                    System.out.print("Four" + " ");
+                    break;
+                case '5':
+                    System.out.print("Five" + " ");
+                    break;
+                case '6':
+                    System.out.print("Six" + " ");
+                    break;
+                case '7':
+                    System.out.print("Seven" + " ");
+                    break;
+                case '8':
+                    System.out.print("Eight" + " ");
+                    break;
+                case '9':
+                    System.out.print("Nine" + " ");
+                    break;
             }
-            if (number.charAt(i) == '1') {
-                System.out.print("one" + " ");
-            }
-            if (number.charAt(i) == '2') {
-                System.out.print("two" + " ");
-            }
-            if (number.charAt(i) == '3') {
-                System.out.print("Three" + " ");
-            }
-            if (number.charAt(i) == '4') {
-                System.out.print("Four" + " ");
-            }
-            if (number.charAt(i) == '5') {
-                System.out.print("Five" + " ");
-            }
-            if (number.charAt(i) == '6') {
-                System.out.print("Six" + " ");
-            }
-            if (number.charAt(i) == '7') {
-                System.out.print("Seven" + " ");
-            }
-            if (number.charAt(i) == '8') {
-                System.out.print("Eight" + " ");
-            }
-            if (number.charAt(i) == '9') {
-                System.out.print("Nine" + " ");
-            }
-
         }
     }
 }
@@ -119,11 +152,11 @@ class Assigment2 {
 
 class Assignments3 {
     public static void main(String[] args) {
-        SearchString();
+//        SearchString();
 //        MatrixAddition();
 //        ArrayColumnSum();
 //        PrintSubMatrix();
-//        MatrixDiagonal();
+        MatrixDiagonal();
 //        TransposeMatrix();
 //        HumanReadableDate();
     }
@@ -148,15 +181,32 @@ class Assignments3 {
     }
 
     public static void MatrixAddition() {
-        int[][] s1 = {{1, 2, 3}, {5, 6, 7}, {7, 8, 9}};
-        int[][] s2 = {{2, 1, 2}, {1, 2, 1}, {2, 1, 2}};
-        int[][] s3 = new int[3][3];
-        for (int row = 0; row < 3; row++) {
-            for (int col = 0; col < 3; col++) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("lenght of matrix");
+        int i = sc.nextInt();
+        int j = sc.nextInt();
+        int[][] s1 = new int[i][j];
+        int[][] s2 = new int[i][j];
+        int[][] s3 = new int[i][j];
+        System.out.println("matrix s1");
+        for (int row = 0; row < i; row++) {
+            for (int col = 0; col < j; col++) { //n*m+9
+                s1[row][col] = sc.nextInt();
+            }
+        }
+        System.out.println("matrix s2");
+        for (int row = 0; row < i; row++) {
+            for (int col = 0; col < j; col++) { //n*m+1
+                s2[row][col] = sc.nextInt();
+            }
+        }
+        System.out.println("adding s1 and s2 matrix");
+        for (int row = 0; row < i; row++) {
+            for (int col = 0; col < j; col++) {         //n*m+1
                 s3[row][col] = s1[row][col] + s2[row][col];
                 System.out.print(s3[row][col] + " ");
             }
-            System.out.println();
+            System.out.println(); //1 ,O(n*m)
         }
 
     }
@@ -164,39 +214,71 @@ class Assignments3 {
     public static void ArrayColumnSum() {
         Scanner sc = new Scanner(System.in);
         System.out.println("matrix's row and column");
-        int[][] s1 = {{1, 2, 1}, {2, 1, 2}};
-        int s3;
-        for (int row = 0; row < 3; row++) {
-            for (int col = 0; col < 3; col++) {
-                s3 = s1[row][col] + s1[row + 1][col];
-                System.out.println(s3);
-
+        int row = sc.nextInt();
+        int col = sc.nextInt();
+        int[][] s1 = new int[row][col];
+        System.out.println("matrix s1");
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                s1[i][j] = sc.nextInt();
             }
+        }
+        System.out.println("adding column");
+        int s3 = 0;
+        for (int i = 0; i < col; i++) {
+            for (int j = 0; j < row; j++) {
+                s3 += s1[j][i];
+            }
+            System.out.println(s3);
+            s3 = 0;
         }
     }
 
     public static void PrintSubMatrix() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("lenght of matrix");
         int rowend = 1;
         int colend = 1;
-        int[][] array = {{1, 2, 3}, {5, 6, 7}, {7, 8, 9}};
+        int row = sc.nextInt();
+        int col = sc.nextInt();
+        int[][] array = new int[row][col];
+        System.out.println("matrix array");
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                array[i][j] = sc.nextInt();
+            }
+        }
+        System.out.println("submatix of array");
         for (int i = 0; i <= rowend; i++) {
             for (int j = 0; j <= colend; j++) {
                 System.out.print(array[i][j] + " ");
             }
             System.out.println();
+
         }
     }
 
     public static void MatrixDiagonal() {
-        int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        Scanner sc = new Scanner(System.in);
+        System.out.println("lenght of matrix");
+        int i = sc.nextInt();
+        int j = sc.nextInt();
+        int[][] matrix = new int[i][j];
         int add1 = 0;
         int add2 = 0;
-        for (int row = 0; row < 3; row++) {
-            for (int col = 0; col < 3; col++) {
+        System.out.println("matrix elements");
+        for (int row = 0; row < i; row++) {
+            for (int col = 0; col < j; col++) {
+                matrix[row][col] = sc.nextInt();
+            }
+        }
+        System.out.println("difference of diagonals");
+        for (int row = 0; row < i; row++) {
+            for (int col = 0; col < j; col++) {
                 if ((row == col)) {
                     add1 += matrix[row][col];
                 }
-                if ((row == 0 && col == 2) || (col == 0 && row == 2) || (row == col) && (row != 0 && col != 2)) {
+                if (row + col == j - 1) {
                     add2 += matrix[row][col];
                 }
             }
@@ -234,7 +316,8 @@ class Assignments3 {
     }
 
     public static void HumanReadableDate() {
-        String date = "2020-06-01";
+        Scanner sc = new Scanner(System.in);
+        String date = sc.nextLine();
         String array[] = date.split("-");
         String month = "";
         String year = "";
@@ -291,4 +374,85 @@ class Assignments3 {
         }
     }
 }
+
+class ArrayPairs {
+    public static void main(String[] args) {
+        int[] array = {8, 4, 6, 2, 1};
+        int sum = 10;
+        int add = 0;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i + 1; j < array.length; j++) {
+                add = 0;
+                if (i != j) {
+                    add = array[i] + array[j];
+                    if (add == sum) {
+                        System.out.println(array[i] + "," + array[j]);
+                    }
+                }
+            }
+        }
+    }
+}
+
+class ArrayUniqueElements {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.println("Lenght of the array");
+
+        int length = s.nextInt();
+        int[] temp = new int[length];
+        int[] array = new int[length];
+        int flag = 1;
+
+        System.out.println("Elements of the array");
+        for (int i = 0; i < length; i++) {
+            array[i] = s.nextInt();
+        }
+        for (int i = 0; i < length; i++) {
+            for (int j = 0; j < length; j++) {
+                if (i != j) {
+                    if (array[i] == array[j]) {
+                        flag = 0;
+                    }
+                }
+            }
+            if (flag == 1) {
+                temp[i] = array[i];
+
+            }
+        }
+        for (int i = 0; i < length; i++) {
+            System.out.println(temp[i]);
+        }
+
+    }
+}
+
+class SwapLarger {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int l = sc.nextInt();
+        int[] array = new int[l];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = sc.nextInt();
+        }
+        int temp = 0;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i + 1; j < array.length; j++) {
+                if (i != array.length - 1 || array[j] != 0) {
+                    if (array[i] < array[j]) {
+                        temp = array[i];
+                        array[i] = array[j];
+                        array[j] = temp;
+                    }
+                }
+            }
+        }
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
+    }
+}
+
 

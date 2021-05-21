@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Dammi {
     public static void main(String[] args) {
         String s = "I love myself";
@@ -26,21 +28,15 @@ class StringClass {
 
 class Arraybig {
     public static void main(String[] args) {
-//       int[] array={10,2,16,15,5};
-//       int temp,max=1;
-//       for(int i=0;i<array.length;i++){
-//           for(int j=i+1;j<array.length;j++){
-//               if(array[i]<array[j]){
-//                   temp=array[i];
-//                   array[i]=array[j];
-//                   array[j]=temp;
-//               }
-//           }
-//       }
-//       System.out.println(array[0]);
-//       AnotherArray();
-        AnotherArrayb();
-
+        int s = 0;
+        int[][] array = {{1, 2, 3}, {4, 5, 6,}, {7, 8, 9}, {10, 11, 12}};
+        for (int row = 0; row < array[0].length; row++) {
+            for (int col = 0; col < array.length; col++) {
+                s += array[col][row];
+            }
+            System.out.println(s);
+            s = 0;
+        }
     }
 
     public static void AnotherArray() {
@@ -88,4 +84,92 @@ class Arraybig {
     }
 }
 
+class AbsoluteValue {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int a = 0;
+//        int a = Math.abs(n - m);
+        if (n < m) {
+            a = m - n;
+        } else {
+            a = n - m;
+        }
+
+        System.out.println(a);
+    }
+}
+
+class MirrorValue {
+    public static void main(String[] args) {
+        String word = "azby";
+        for (int i = 0; i < word.length(); i++) {
+            char c = word.charAt(i);
+            int a = (122 - c) + 97;
+            char s = (char) a;
+            System.out.print(s);
+        }
+    }
+}
+
+class SwapSmaller {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int l = sc.nextInt();
+        int[] array = new int[l];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = sc.nextInt();
+        }
+        int temp = 0;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i + 1; j < array.length; j++) {
+                if ((i == 0 && array[j] != 0) || i != 0) {
+                    if (array[i] > array[j]) {
+                        temp = array[i];
+                        array[i] = array[j];
+                        array[j] = temp;
+                    }
+                }
+            }
+        }
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
+
+    }
+}
+
+class AddEqualNum {
+    public static void main(String[] args) {
+        int[] array = {8, 4, 6, 2, 1, 5, 5};
+        int sum = 10;
+        int add = 0;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                add = 0;
+                if (i != j) {
+                    add = array[i] + array[j];
+                    if (add == sum) {
+                        System.out.println(array[i] + "," + array[j]);
+                    }
+                }
+            }
+        }
+    }
+}
+//class Continue{
+//    public static void main(String[]args){
+//        String name="masai";
+//        String temp="masa";
+//        for(int i=0;i<name.length();i++);{
+//            for(int j=0;j<temp.length();j++){
+//                if(temp.charAt(j)==name.charAt(i)){
+//                    continue;
+//                }
+//
+//            }
+//        }
+//    }
+//}
 
