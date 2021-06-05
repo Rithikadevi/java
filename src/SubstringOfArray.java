@@ -5,24 +5,28 @@ public class SubstringOfArray {
         Scanner sc = new Scanner(System.in);
         System.out.println("enter a string");
         String name = sc.nextLine();
-        String temp = "";
-        boolean flag = true;
         for (int i = 0; i < name.length(); i++) {
-            temp = "";
 
             for (int j = i; j < name.length(); j++) {
-                temp += name.charAt(j);
 
-                System.out.println(temp);
+                subString(name, i, j);
 
             }
 
         }
     }
 
-    private static void subString() {
-
-
+    public static void subString(String name, int i, int j) {
+        String temp = "";
+        boolean flag = false;
+        for (int k = i; k <= j; k++) {
+            if (temp.contains("" + name.charAt(k))) {
+                flag = true;
+                break;
+            }
+            temp += name.charAt(k);
+        }
+        if (!flag) System.out.println(temp);
     }
-}
 
+}
