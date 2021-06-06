@@ -18,9 +18,6 @@ public class Arrays {
             System.out.println(array[i]);
         }
     }
-
-//    public static boolean String(int[] array) {
-//    }
 }
 
 class Arraysdec {
